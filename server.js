@@ -2,6 +2,8 @@ const express = require('express');
 const hbs = require('hbs'); // handlebars is used to templatize static html pages in view folder e.g header, footer pages   
 const fs = require('fs');
 
+const port = process.env.PORT || 3000; // default to port 3000 for running locally.Otherwise use heroku port. 
+
 var app = express();
 
 hbs.registerPartials(__dirname + '/views/partials'); // views/partials folder has reusable static templates
@@ -68,7 +70,8 @@ app.get('/bad',(request, response) => {
     });
 });
 
-app.listen(3000, () => {
-    console.log('Server is up on port 3000');
+// heroku port looked from env variables
+app.listen(port, () => {
+    console.log(`Server is up on port ${port}`);
 }); // listen app on 3000
 

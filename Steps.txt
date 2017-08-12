@@ -1,0 +1,48 @@
+Steps to move code to Git:
+
+// initiate git by using following command:
+git init
+
+create .gitignore file to root of project to capture files/folders to be ignored
+
+git add .
+git status
+
+// commit the files to local git
+git commit -m "Adding projects page"
+
+Create repository in GITHUB: node-course-web-server-1
+
+Copy the commands from github to push code to github and run these commands
+git remote add origin https://github.com/abhising007/node-course-web-server-1.git
+git push -u origin master
+
+Handling Additional changes...
+git add .
+git status
+git push
+
+#create project on heroku
+heroku create
+
+# to add addon on heroku project like mongodb using sandbox plan i.e. free-plan
+    heroku addons:create mongolab:sandbox
+
+# Heroku is asking for credit card... follow the instructions on this link...
+http://stackoverflow.com/questions/36321385/deploy-nodejs-mongodb-on-heroku-but-need-verify-credit-card-when-install-add-o
+
+MLab username:
+abhising007
+Password: <OB password>
+email: absinghal@sapient.com
+
+heroku config:set MONGOLAB_URI=mongodb://user123:Obsape1$@ds011268.mlab.com:11268/sandbox
+
+
+git push heroku
+heroku open
+
+
+
+
+

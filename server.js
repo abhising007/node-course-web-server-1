@@ -3,6 +3,7 @@ const hbs = require('hbs'); // handlebars is used to templatize static html page
 const fs = require('fs');
 
 const port = process.env.PORT || 3000; // default to port 3000 for running locally.Otherwise use heroku port. 
+const host = process.env.host || "localhost";
 
 var app = express();
 
@@ -16,11 +17,12 @@ app.use((request, response, next)=>{
     var log = `${now}: ${request.method} ${request.url}`;
     fs.appendFile('server.log', log + '\n', (err) => {
         if(err) {
-        console.log('Unable to append to server.log file');
+            console.log('Unable to append to server.log file');
         }
     });
     console.log(log);
     //  
+    
     next();
 });
 
